@@ -4,8 +4,8 @@ metadata:
   name: flask-service
 spec:
   selector:
-    app: flask-app
+    app: iot-sensor-app
   ports:
     - protocol: TCP
-      port: 5000
+      port: 80
       targetPort: 5000
