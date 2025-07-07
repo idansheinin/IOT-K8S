@@ -57,5 +57,7 @@ spec:
                 configMapKeyRef:
                   name: flask-config
                   key: SENSOR_UPDATE_INTERVAL
+            - name: DATABASE_URL 
+              value: postgresql://postgres:mypassword@db:5432/sensors_db
           ports:
             - containerPort: 5000

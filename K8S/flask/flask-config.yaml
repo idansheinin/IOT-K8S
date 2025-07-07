@@ -3,6 +3,7 @@ kind: ConfigMap
 metadata:
   name: flask-config
 data:
-  DATABASE_HOST: postgres-service
+  DATABASE_HOST: db
   DATABASE_PORT: "5432"
   SENSOR_UPDATE_INTERVAL: "60"
+  DATABASE_URL: postgresql://postgres:mypassword@db:5432/sensors_db
