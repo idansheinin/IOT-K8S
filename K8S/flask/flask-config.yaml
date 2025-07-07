@@ -5,3 +5,4 @@ metadata:
 data:
   DATABASE_HOST: postgres-service
   DATABASE_PORT: "5432"
+  SENSOR_UPDATE_INTERVAL: "60"

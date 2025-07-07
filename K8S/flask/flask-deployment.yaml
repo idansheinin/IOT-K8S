@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: flask-app
+  name: iot-sensor-app
   labels:
-    app: flask-app
+    app: iot-sensor-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: flask-app
+      app: iot-sensor-app
   template:
     metadata:
       labels:
-        app: flask-app
+        app: iot-sensor-app
     spec:
       containers:
-        - name: flask-app
-          image: myregistry/flask-app:latest
+        - name: iot-sensor-app
+          image: omeravi/iot-sensor-app:latest
           command: ["/bin/sh", "-c"]
           args:
             - |
@@ -52,5 +52,10 @@ spec:
                 configMapKeyRef:
                   name: flask-config
                   key: DATABASE_PORT
+            - name: SENSOR_UPDATE_INTERVAL
+              valueFrom:
+                configMapKeyRef:
+                  name: flask-config
+                  key: SENSOR_UPDATE_INTERVAL
           ports:
             - containerPort: 5000
